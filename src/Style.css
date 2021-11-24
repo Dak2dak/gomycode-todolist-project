@@ -1,0 +1,59 @@
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container--list {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 350px;
+    border: 3px solid green;
+}
+
+.add--task {
+    height: 30%;
+    
+}
+
+.add--task h1 {
+    margin-left: 1rem;
+}
+
+.adding--box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add--task i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.todo--list {
+    border: 1px solid blue;
+    height: 70%;
+}
+
+.todo {
+    border: 1px solid red;
+    height: 100px;
+    display: flex;
+}
+
+.task--title {
+    height: 30px;
+    margin: auto 0;
+}
+
+.task--deleting {
+    color: red;
+    width: 20%;
+}
+
+.task--deleting i {
+    cursor: pointer;
+}
