@@ -6,10 +6,10 @@ class ToDoList extends React.Component {
 
     state = {
         tasks: [
-            {id: 1, taskName: "do the dishes", done: true},
-            {id: 2, taskName: "do my homework", done: true},
-            {id: 3, taskName: "go run errands", done: true},
-            {id: 4, taskName: "go to the drogstore", done: true}
+            {id: 1, taskName: "Do the dishes", done: false},
+            {id: 2, taskName: "Do my homework", done: false},
+            {id: 3, taskName: "Go run errands", done: false},
+            {id: 4, taskName: "Go to the drogstore", done: false}
         ]
     }
 

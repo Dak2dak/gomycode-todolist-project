@@ -15,7 +15,6 @@
 
 .add--task {
     height: 30%;
-    
 }
 
 .add--task h1 {
@@ -36,12 +35,15 @@
 .todo--list {
     border: 1px solid blue;
     height: 70%;
+    font-weight: bold;
+    background-color: rgb(0, 247, 255);
 }
 
 .todo {
     border: 1px solid red;
-    height: 100px;
+    height: 50px;
     display: flex;
+    padding-left: 1rem;
 }
 
 .task--title {
@@ -52,8 +54,12 @@
 .task--deleting {
     color: red;
     width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .task--deleting i {
     cursor: pointer;
+    margin: auto 0;
 }

@@ -5,7 +5,6 @@ function ToDo(props) {
     return (
         <div className="todo">
             <div className="task--title">
-                Task to do
                 {props.name}
             </div>
             <div className="task--checking">
