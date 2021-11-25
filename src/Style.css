@@ -33,14 +33,14 @@
 }
 
 .todo--list {
-    border: 1px solid blue;
+    border: 3px solid blue;
     height: 70%;
     font-weight: bold;
     background-color: rgb(0, 247, 255);
 }
 
 .todo {
-    border: 1px solid red;
+    border: 2px solid red;
     height: 50px;
     display: flex;
     padding-left: 1rem;
@@ -49,17 +49,30 @@
 .task--title {
     height: 30px;
     margin: auto 0;
+    width: 70%;
+}
+
+.task--postponing {
+    margin: auto 0;
+    margin-left: 2rem;
+    width: 10%;
 }
 
 .task--deleting {
     color: red;
-    width: 20%;
+    width: 10%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
+.task--checking {
+    margin: auto 0;
+    width: 10%;
+    margin-right: .2rem;
+}
+
 .task--deleting i {
     cursor: pointer;
-    margin: auto 0;
+    margin: auto 3px;
 }
