@@ -6,11 +6,12 @@ class ToDoList extends React.Component {
 
     state = {
         tasks: [
-            {id: 1, taskName: "Do the dishes", done: false},
-            {id: 2, taskName: "Do my homework", done: false},
-            {id: 3, taskName: "Go run errands", done: false},
-            {id: 4, taskName: "Go to the drogstore", done: false}
+            {id: 1, taskName: "Do the dishes", done: false, show : false},
+            {id: 2, taskName: "Do my homework", done: false, show : false},
+            {id: 3, taskName: "Go run errands", done: false, show : false},
+            {id: 4, taskName: "Go to the drogstore", done: false, show : false}
         ]
+
     }
 
     handleDelete = id => {
@@ -18,27 +19,39 @@ class ToDoList extends React.Component {
         const index = newTasks.findIndex(task => task.id === id)
 
         newTasks.splice(index, 1);
-
         this.setState({tasks: newTasks});
     }
 
-    modifyTodo = (id) => {
-
-
-        const element = <input type="text" />
-        console.log({element})
+    editTodo = (id) => {
+    const newTasks =  [...this.state.tasks];
+    newTasks.forEach(task => 
+            {if(task.id === id) {
+                task.show = !task.show;
+        }})
+        
+        this.setState({tasks : newTasks})
     }
 
-    render() {
+    modifyTodo = (id, name) => {
+        const newTasks =  [...this.state.tasks];
+            newTasks.forEach(task => 
+                {if(task.id === id) {
+                    task.taskName = name;
+                    task.show = !task.show;
+            }})
 
-        return(
-            <div className="todo--list">
-                {this.state.tasks.map(task => <ToDo name = {task.taskName} 
-                id = {task.id} taskDelete={this.handleDelete} 
-                taskModify = {this.modifyTodo} />)}
-            </div>
-        )
-    }
+        this.setState({tasks : newTasks})
+        }
+
+        render() {
+            return(
+                <div className="todo--list">
+                    {this.state.tasks.map(task => <ToDo name = {task.taskName} 
+                    id = {task.id} taskDelete={this.handleDelete} 
+                    editTodo= {this.editTodo}  show={task.show} onSubmit={this.modifyTodo}/>)}
+                </div>
+            )
+        }
 }
 
 export default ToDoList;
