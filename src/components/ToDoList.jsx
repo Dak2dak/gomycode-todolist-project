@@ -13,11 +13,29 @@ class ToDoList extends React.Component {
         ]
     }
 
+    handleDelete = id => {
+        const newTasks = [...this.state.tasks];
+        const index = newTasks.findIndex(task => task.id === id)
+
+        newTasks.splice(index, 1);
+
+        this.setState({tasks: newTasks});
+    }
+
+    modifyTodo = (id) => {
+
+
+        const element = <input type="text" />
+        console.log({element})
+    }
+
     render() {
 
         return(
             <div className="todo--list">
-                {this.state.tasks.map(task => <ToDo name = {task.taskName} />)}
+                {this.state.tasks.map(task => <ToDo name = {task.taskName} 
+                id = {task.id} taskDelete={this.handleDelete} 
+                taskModify = {this.modifyTodo} />)}
             </div>
         )
     }
