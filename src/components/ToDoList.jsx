@@ -4,6 +4,8 @@ import ToDo from './ToDo';
 
 class ToDoList extends React.Component {
 
+    taskInput = React.createRef();
+
     state = {
         tasks: [
             {id: 1, taskName: "Do the dishes", done: false, show : false},
@@ -48,7 +50,8 @@ class ToDoList extends React.Component {
                 <div className="todo--list">
                     {this.state.tasks.map(task => <ToDo name = {task.taskName} 
                     id = {task.id} taskDelete={this.handleDelete} 
-                    editTodo= {this.editTodo}  show={task.show} onSubmit={this.modifyTodo}/>)}
+                    editTodo= {this.editTodo}  show={task.show} 
+                    onSubmit= {this.modifyTodo} onClick = {this.addTodo} />)}
                 </div>
             )
         }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AddTask from './components/AddTask';
-import ToDo from './components/ToDo';
 import ToDoList from './components/ToDoList';
 import './Style.css';
 
